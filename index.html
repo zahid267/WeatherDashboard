@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Weather Dashboard</h1>
+      
+    </header>
+    <main class="container">
+      <section class="inputarea">
+        <div class="search-container">
+          <form>
+            <label>Search for a City</label>
+            <input type="text" placeholder="Search.." id="search" name="search"><button type="submit" title="Search"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <hr />
+        <ul id="city_list">
+
+        </ul>
+      </section>
+      <section class="weather">
+        <div class="today">
+          <h2><span id="city_name"></span> (<span id="curr_date"></span>) <img id="weather_icon"></img></h2>
+          <p>Temperature : <span id="temperature" class="temperature"></span></p>
+          <p>Humidity : <span id="humidity"></span></p>
+          <p>Wind Speed : <span id="wind_speed"></span></p>
+          <p>UV Index : <span id="uv_index"></span></p>
+        </div>
+        <div class="nextblock">
+          <h3>5-Day Forecast : </h3>
+          <div class="comingDays">
+            <!--
+            <span>
+              <h3>h3 Text</h3>
+              <img />
+              <p>111</p>
+              <p>222</p>
+            </span>
+
+            <span>
+              <h3>h3 Text</h3>
+              <img />
+              <p>111</p>
+              <p>222</p>
+            </span>
+            <span>
+              <h3>h3 Text</h3>
+              <img />
+              <p>111</p>
+              <p>222</p>
+            </span>
+            <span>
+              <h3>h3 Text</h3>
+              <img />
+              <p>111</p>
+              <p>222</p>
+            </span>
+            <span>
+              <h3>h3 Text</h3>
+              <img />
+              <p>111</p>
+              <p>222</p>
+            </span>-->
+
+          </div>
+        </div>
+
+      </section>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

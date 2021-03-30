@@ -1,0 +1,156 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+header{
+  text-align: center;
+  background-color: slategray;
+  border-bottom: 10px solid navy;
+}
+
+h1{
+  font-size: 400%;
+  width: 100%;
+  
+}
+button{
+  background-color: navy;
+  color: white;
+  height:30px;
+}
+input {
+  display:inline-flexbox;
+  margin: 1px;
+  width: auto;
+}
+.container{
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.inputarea{
+  width: 28%;
+  height: 100vh;
+  border-right: 5px solid navy;
+  flex:1;
+}
+.inputarea ul{
+  list-style: none;
+  float: left;
+  line-height: 1.3em;
+}
+.inputarea ul li{
+  cursor: pointer;
+  margin: 1px;
+  padding-top: 10px;
+}
+.search-container{
+  display: block;
+  padding-top: 10px;
+}
+.search-container label{
+  display: block;
+  font-size: large;
+  font-weight: bolder;
+}
+.weather{
+  flex:2;
+}
+.today{
+  margin:20px;
+  padding: 10px;
+  line-height: 1.5em;
+  border: 1px ridge grey;
+  
+}
+
+.nextblock{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.comingDays{
+  flex:1;
+  margin: 10px;
+}
+.comingDays span{
+  display: inline-block;
+  margin: 5px;
+  padding-left: 5px;
+  width: 125px;
+  height: 175px;
+  background-color:blue;
+  border-radius: 10px;
+  color: white;
+  line-height: 1.3em;
+  opacity:0.6;
+  font-size: 12px;
+}
+.temperature:after{
+  content:" \2103";
+}
+#uv_index{
+  padding: 5px;
+  border-radius: 5px;
+}
+.green{
+  background-color: green;
+  color:white;
+}
+.yellow{
+  background-color:yellow;
+  color:white;
+}
+.orange{
+  background-color:orange;
+  color:white;
+}
+.red{
+  background-color:red;
+  color:white;
+}
+.violet{
+  background-color:violet;
+  color:white;
+}
+p{
+  font-weight: bold;
+}
+ /* Tablets - header changes color */
+ @media screen and (max-width: 992px) {
+
+} 
+/* Large smartphones - navbar changes color */
+@media screen and (max-width: 768px) {
+ body{
+   font-size: 14px;
+ } 
+ h1{
+  font-size: 300%;
+}
+.today{
+  margin:10px;
+  padding: 10px;
+}
+#search{
+  width: 140px;
+}
+/* Small smartphones - image placeholders change color */
+@media screen and (max-width: 576px) {
+  body{
+    font-size: 14px;
+  }
+  h1{
+    font-size: 200%;
+  } 
+  .container{
+    margin-left: 1px;
+    margin-right: 5px;
+  }
+  .today{
+    margin:5px;
+    padding: 5px;
+  }
+}
