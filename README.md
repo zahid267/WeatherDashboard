@@ -35,9 +35,9 @@ The following image shows the web application's appearance and functionality:
 
 ## Review
 
-* The URL of the deployed application : 
+* The URL of the deployed application : https://zahid267.github.io/WeatherDashboard/
 
-* The URL of the GitHub repository :
+* The URL of the GitHub repository : https://github.com/zahid267/WeatherDashboard
 
 - - -
-Developed by Muhammad Zahid --- April 02, 2021
+*** Developed by Muhammad Zahid --- April 02, 2021
