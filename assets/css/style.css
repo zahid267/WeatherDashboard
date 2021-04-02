@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: cadetblue;
 }
 header{
   text-align: center;
@@ -31,7 +32,7 @@ input {
 }
 
 .inputarea{
-  width: 28%;
+  width: 25%;
   height: 100vh;
   border-right: 5px solid navy;
   flex:1;
@@ -39,12 +40,11 @@ input {
 .inputarea ul{
   list-style: none;
   float: left;
-  line-height: 1.3em;
+  line-height: 1.2em;
 }
 .inputarea ul li{
   cursor: pointer;
-  margin: 1px;
-  padding-top: 10px;
+  margin: 0;
 }
 .search-container{
   display: block;
@@ -144,6 +144,9 @@ p{
   }
   h1{
     font-size: 200%;
+  } 
+  h2, h3{
+    font-size: 150%;
   } 
   .container{
     margin-left: 1px;

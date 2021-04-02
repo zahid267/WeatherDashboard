@@ -24,6 +24,7 @@ var ulEl = $("#city_list"); var liEl = ""; var imageEl = "";
 var lat = ""; var lon = "";   /// Latitude and longitude variables
 var iconcode = "";  var iconurl = "";
 var cdate; var temperature; var humidity; var uvindex;  var windspeed;
+
 /*
 Call current UV data
 By geographic coordinates
@@ -58,9 +59,6 @@ function fetchDailyForecast(lat, lon){
 var getCityWeather = function (city) {
   //var apiUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?q="+city+"&cnt="+noDays+"&APPID="+weatherApiKey;
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&cnt="+noDays+"&APPID="+weatherApiKey;
-
-  /// The default returned data is in JSON format
-  // console.log(apiUrl)
 
   fetch(apiUrl)
     .then(function (response) {
@@ -140,19 +138,22 @@ function handleSearchFormSubmit(event) {
     console.error('You need a search input value!');
     return;
   }
+  
+  $('#search').val(''); /// to clear the search field
+  comingDaysEl.empty();
+  getCityWeather(searchInputVal)
+
   searchInputVal = searchInputVal.toLowerCase();
+  
   if(cityList.includes(searchInputVal) !== true){
     cityList.push(searchInputVal);
     localStorage.setItem("cityList",JSON.stringify(cityList))
     liEl = $("<li>").text(searchInputVal);
+    liEl.attr('class','list-group-item');
     ulEl.append(liEl)
   }
-  $('#search').val(''); /// to clear the search field
-  comingDaysEl.empty();
-  getCityWeather(searchInputVal)
-  //console.log(searchInputVal)
+  
   //var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
-
   //location.assign(queryString);
 }
 function showPreviousCities(){
@@ -164,18 +165,20 @@ function showPreviousCities(){
   ulEl.empty();   /// Creal all the li elements if exists
   for(var i=0; i<cityList.length; i++){
     liEl = $("<li>").text(cityList[i]);
+    liEl.attr('class','list-group-item');
     ulEl.append(liEl)
     liEl = ""
   }
 }
+/*UV Index colors*/
+  /*2 or less	Low	Green
+3 to 5	Moderate	Yellow
+6 to 7	High	Orange
+8 to 10	Very High	Red
+11+	Extreme	Violet*/
 function uvIndexLevel(uvi){
   uvi = parseFloat(uvi)
   var cat = "";
-                                              /*2 or less	Low	Green
-                                            3 to 5	Moderate	Yellow
-                                            6 to 7	High	Orange
-                                            8 to 10	Very High	Red
-                                            11+	Extreme	Violet*/
   if(uvi <= 2){
     cat = "green"
   }else if(uvi >= 3 && uvi < 6){
@@ -199,4 +202,3 @@ ulEl.on('click', function(event){
   searchBtn.click();
 });
 showPreviousCities();
-//setInterval(displayTime,1000);
